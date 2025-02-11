@@ -14,6 +14,7 @@
     font-weight: 400;
     src: url('../fonts/open-sans-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-italic - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -22,6 +23,7 @@
     font-weight: 400;
     src: url('../fonts/open-sans-v40-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* open-sans-800 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -36,7 +38,7 @@
 }
 
 body {
-    background: #fdfffc;
+    background-color: #fdfffc;
     color: #011627;
     font-size: 100%;
     line-height: 1.4;
@@ -45,19 +47,27 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, .nom {
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+.nom {
     font-family: "Changa One", cursive;
     font-weight: 400;
 }
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
 h2 {
     font-size: 1.5rem;
-    margin-bottom: .75rem;
+    margin-bottom: .75em;
 }
 
 p {
@@ -65,11 +75,11 @@ p {
 }
 
 a {
-    color: #e71d36;
+    color: #e71d36 ;
     text-decoration: none;
 }
 
-/* Entête et menu */
+/* Entête du site et menu */
 header {
     background-color: #011627;
     padding: 10px;
@@ -77,15 +87,108 @@ header {
 
 header .logo {
     text-align: center;
-
 }
 
 header .logo .nom {
-    color: #2ec4b6;
+    color: #2EC4B6;
     font-size: 1.75rem;
 }
 
 header .logo .metier {
     font-size: 1.2rem;
     margin-top: -5px;
+}
+
+header nav {
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Supprimer la marge intérieure de gauche */
+}
+
+header nav li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+header nav ul li.accueil {
+    display: none;
+}
+
+header nav a {
+    color: #fdfffc;
+    font-weight: 800;
+}
+
+header nav a:hover,
+header nav a.actif {
+    color: #2EC4B6;
+}
+
+/* Contenu principal */
+main {
+    padding: 0 5%;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    margin: 50px 0;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer nav img {
+    max-height: 50px;
+    filter: grayscale(100%);
+    transition: all 1s;
+    animation: battements 1s infinite;
+}
+
+footer nav img:hover {
+    filter: grayscale(0);
+}
+
+@keyframes battements {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1) rotate(-20deg);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Page index */
+
+/* Container Flexbox */
+.page-index .realisations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* Elements Flex */
+.page-index .realisations li {
+    max-width: 50%;
+
+}
+
+/* Suppression des marges par défaut des figures */
+.page-index .realisations figure {
+    margin: 0;
 }
