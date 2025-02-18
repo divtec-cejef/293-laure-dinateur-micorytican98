@@ -192,3 +192,26 @@ footer nav img:hover {
 .page-index .realisations figure {
     margin: 0;
 }
+
+/****************************************************************
+    MEDIA QUERIES
+****************************************************************/
+
+@media screen and (min-width: 480px) {
+    .page-index .realisations li {
+        flex-basis: calc(100%/3);
+        flex-grow: 3;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    main {
+        background-color: gold;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    main {
+        background-color: violet;
+    }
+}
